@@ -41,12 +41,39 @@ void clear_bullet(int x,int y){
 	setcolor(0,0); gotoxy(x,y); printf(" ");
 }
 
+void draw_star(){
+	int xs,ys,i,m,n;
+	srand(time(NULL));
+	for(i=0;i<20;i++){
+		m=rand(); ys=xs%10;
+		n=rand(); xs=xs%100;
+	
+		if(ys>5 || ys<2){
+			do{m=rand(); ys=m%10;}
+			while(ys<=5 && ys>=2);
+		}
+		
+		if(xs<10 || xs>70){
+			do{n=rand(); xs=n%100;}
+			while(xs<=70 && xs>=10);
+		}
+		
+		
+		gotoxy(xs,ys);
+		setcolor(7,0);
+		printf("*");
+	}
+}
+
 
 int main(){
 	char ch='.';
-	int x=38,y=20;
-	int bx,by,i;
-	int bullet = 0;
+	int x=38,y=25;
+	int bullet = 0,bx,by;
+	
+	gotoxy(10,2);printf("T");
+	gotoxy(70,5);printf("T");
+	draw_star();
 	draw_ship(x,y);
 	setcursor(0);
 	do {
