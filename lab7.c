@@ -83,7 +83,7 @@ int main(){
 		
 	if (bullet==1) {
 		clear_bullet(bx,by);
-		if (by==2) { bullet=0;} else { draw_bullet(bx,--by); }
+		if (by==2) { bullet=0;} else { draw_bullet(bx,--by);Beep(8000,100);  }
 	}
 	Sleep(100);
 } while (ch!='x');
