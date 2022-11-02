@@ -44,7 +44,7 @@ void clear_bullet(int x,int y){
 void draw_star(){
 	int xs,ys,i;
 	srand(time(NULL));
-	for(i=0;i<20;i++){
+	for(i=0;i<70;i++){
 		ys=rand(); ys=xs%10;
 		xs=rand(); xs=xs%100;
 	
@@ -62,7 +62,7 @@ void draw_star(){
 
 void fill_star(){
 	int xs,ys,i;
-	ys=rand(); ys=xs%10;
+	ys=rand(); ys=ys%10;
 	xs=rand(); xs=xs%100;
 	
 	if(ys>5 || ys<2){
@@ -126,7 +126,7 @@ int main(){
 				draw_bullet(bx,--by);
 				Beep(5000,100);}  }
 	}
-	Sleep(100);
+	Sleep(10);
 } while (ch!='x');
 return 0;
 }
